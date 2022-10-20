@@ -6,5 +6,4 @@ RUN ./mvnw clean install -DskipTests
 
 FROM builder
 COPY --from=builder /app/source/target/eureka-0.0.1-SNAPSHOT.jar /app/app.jar
-EXPOSE 9000
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
